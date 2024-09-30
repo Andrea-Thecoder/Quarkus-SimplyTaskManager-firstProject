@@ -32,7 +32,13 @@ public class Task {
     public Task() {
         this.createAt = LocalDateTime.now(); //anche se li gestisce il db bisogna inserire questi campi  nel costruttore, a me puzza!
         this.updateAt = LocalDateTime.now();
+        this.isComplete = false;
+    }
 
+    //annotazione con method associato necessari oper aggioranre i valore di update at!
+    @PreUpdate
+    public void preUpdate(){
+        this.updateAt = LocalDateTime.now();
     }
 
     public long getId() {

@@ -28,18 +28,14 @@ public class TaskService implements   ITaskService {
 
 
     public List<TaskResponseDTO> getAllTask(){
-        try {
+
             List<Task> allTasks = this.taskRepository.listAll();
             return this.taskMapper.toDtoListResponse(allTasks);
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Transactional //indica che il code deve essere eseguito all'intero di una transaction, ovvero  quando viene evocato il method se una transizione è gia attiva continua ad utilizzare la stessa e non ne crea una nuova. Si deve usare la transaction per qualsiasi cosa che modifichi lo status del server (put,delete,post etc). La transizione viene "commit"  ovvero salva le modifiche solo SE termina con successo ovvero non throwa exception . In caso di exception effettua un rollback  ovvero annulal tutte le modifiche fatte durante la transizione, in questo modo l'integrita strutturale del DB viene preservata.
     public TaskResponseDTO createTask (TaskCreateDTO createDTO){
-        try {
             //pulizia dei valori d'ingresso, in questo caso impsotiamo la prima elttera del titolo in upperCase. Solo la priam lettera in quanto potremmo trovare nei titoli delle sigle in maiuscolo e devono restare tali.
             String title = StringUtils.capitalizeOnlyFirstLetter(createDTO.getTitle());
 
@@ -54,13 +50,11 @@ public class TaskService implements   ITaskService {
 
             //hibernate è cosi potente da aggiornare automaticamente l'oggetto newtask con i valori autogenerati dopo il persist, in questo modo quando rinviamo indietro l'oggetto newTask esso sarà completo di tutte le informazioni necessarie.
             return taskMapper.toDtoResponse(newTask);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
     public TaskResponseDTO findByTitle(String title){
-        try {
+
             String titleCapitalized = StringUtils.capitalizeOnlyFirstLetter(title);
             if (title == null || title.isEmpty() ) throw new IllegalArgumentException("Title cannot be empty");
             Optional<Task> taskOpt = this.taskRepository.findByTitle(title);
@@ -68,36 +62,29 @@ public class TaskService implements   ITaskService {
             Task task = taskOpt.get();
             return this.taskMapper.toDtoResponse(task);
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 
     public TaskResponseDTO findById(long id){
 
-        try {
+
             if (id <= 0) throw new IllegalArgumentException("ID non valido");
 
             Optional<Task> TaskCheckOpt = this.taskRepository.findByIdOptional(id);
-            if (!TaskCheckOpt.isPresent()) throw new EntityExistsException("Task with id: '" + id + "' not exists.");
+            if (!TaskCheckOpt.isPresent()) throw new NoSuchElementException("Task with id: '" + id + "' not exists.");
 
             Task task = TaskCheckOpt.get();
 
             return this.taskMapper.toDtoResponse(task);
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Transactional
     public TaskResponseDTO updateTask(long id, TaskUpdateDTO updateDTO) {
 
-        try {
             if (id <= 0) throw new IllegalArgumentException("Invalid ID value");
 
             Optional<Task> TaskCheckOpt = this.taskRepository.findByIdOptional(id);
-            if (!TaskCheckOpt.isPresent()) throw new EntityExistsException("Task with id: '" + id + "' not exists.");
+            if (!TaskCheckOpt.isPresent()) throw new NoSuchElementException("Task with id: '" + id + "' not exists.");
 
             Task updateTask = TaskCheckOpt.get(); // online ho eltto che conviene sempre estrarre il value del opt in un altra variabile e non usare il .get direttamente.
 
@@ -115,16 +102,10 @@ public class TaskService implements   ITaskService {
 
             return this.taskMapper.toDtoResponse(updateTask);
 
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Transactional
     public TaskResponseDTO deleteById(long id){
-
-        try {
 
             if (id <= 0) throw new IllegalArgumentException("Invalid ID value!");
 
@@ -137,14 +118,10 @@ public class TaskService implements   ITaskService {
 
             return this.taskMapper.toDtoResponse(task);
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 
 
     public List<TaskResponseDTO> findByCompletion (String booleanValue){
-        try {
 
             if(booleanValue == null || booleanValue.isEmpty())
                 throw new IllegalArgumentException("ID non valido");
@@ -156,8 +133,5 @@ public class TaskService implements   ITaskService {
 
             return this.taskMapper.toDtoListResponse(filterTask);
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 }
