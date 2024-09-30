@@ -1,3 +1,55 @@
+# Welcome at my First Quarkus Project!
+
+This repository show my first Quarkus project a simply Task Manager backend. 
+Before i start to upgrate this project adding user, auth etc... i want run optimization of code and add some utils.
+
+Please remember to go in application.proprieties and changing the url of you MySQL DB, add password and change username if needed, then change (for the first run only!) the database generation in create. 
+
+#EndPoint for this Project:
+
+For all Task endpoint the base url are : <b> `/task` </b>
+
+GET retrive all existing Task:
+
+`http://localhost:8080/task/` ;
+
+<br>
+
+GET findById <b> `/task/{id}` </b>
+`http://localhost:8080/task/1` ; <--- accept url param
+
+<br>
+
+GET findByTitle <b> `/task/by-title` </b>
+`http://localhost:8080/task/by-title?title=example` ; <--- accept query param ("title");
+
+<br>
+
+GET findByCoimpletition <b> `/task/by-completion` </b>
+`http://localhost:8080/task/by-completion?complete` ; <--- accept query param ("complete"), need be String
+
+<br>
+
+POST createTask <b> `/task/add-task` </b>
+`http://localhost:8080/task/add-task` ; <--- need body (title and description only)
+
+<br>
+
+PUT updateTask <b> `/task/update/{id}` </b>
+`http://localhost:8080/task/update/1` ; <--- accept url param, need body (title,description, isComplete) all are optional.
+
+<br>
+
+DELETE deleteTask <b> `/task/remove/{id}` </b>
+`http://localhost:8080/task/remove/1` ; <--- accept url param. 
+
+
+<br>
+
+Thanks for you time!
+
+
+
 # code-with-quarkus
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
