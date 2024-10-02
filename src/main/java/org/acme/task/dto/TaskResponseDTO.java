@@ -1,36 +1,36 @@
 package org.acme.task.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
-import org.acme.annotation.SanitizeHtmlAnnotation;
 
 import java.time.LocalDateTime;
 
 public class TaskResponseDTO {
 
-    @SanitizeHtmlAnnotation
+
     @NotNull(message = "id cannot be null")
     @Positive(message = "id must be positive!")
     private long id;
 
-    @SanitizeHtmlAnnotation
+
     @NotNull(message = "title cannot be null!")
     @NotBlank(message = "title cannot be empty")
     @Size(min = 1, max = 40,message = "title must be between 1 and 40 characters")
     private String title;
 
-    @SanitizeHtmlAnnotation
+
     @NotNull(message = "description cannot be null!")
     @NotBlank(message = "description cannot be empty")
     private String description;
 
-    @SanitizeHtmlAnnotation
+
     @NotNull(message = "createAt cannot be null!")
     private LocalDateTime createAt;
 
-    @SanitizeHtmlAnnotation
+
     @NotNull(message = "updateAt cannot be null!")
     private LocalDateTime updateAt;
 
@@ -91,6 +91,7 @@ public class TaskResponseDTO {
         this.isComplete=complete;
     }
 
+    @JsonProperty("isComplete")
     public boolean isComplete() {
         return isComplete;
     }

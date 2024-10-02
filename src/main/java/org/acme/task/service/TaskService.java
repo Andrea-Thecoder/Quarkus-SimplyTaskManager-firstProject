@@ -87,7 +87,6 @@ public class TaskService implements   ITaskService {
             if (!TaskCheckOpt.isPresent()) throw new NoSuchElementException("Task with id: '" + id + "' not exists.");
 
             Task updateTask = TaskCheckOpt.get(); // online ho eltto che conviene sempre estrarre il value del opt in un altra variabile e non usare il .get direttamente.
-
             //Valutare in futuro di creare una classe Utils per controllo ed inserimento automatico di questi valori, per ora essendo solo 3 vabene cosi!
             if(updateDTO.getTitle() != null && !updateDTO.getTitle().isEmpty())
                 updateTask.setTitle(StringUtils.capitalizeOnlyFirstLetter(updateDTO.getTitle())) ;

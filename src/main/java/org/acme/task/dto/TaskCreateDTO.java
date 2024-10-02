@@ -5,18 +5,15 @@ package org.acme.task.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import org.acme.annotation.SanitizeHtmlAnnotation;
 
 //DTO per la creazione di nuovi Task, da usare nel method POST del Task.
 public class TaskCreateDTO {
 
-    @SanitizeHtmlAnnotation
     @NotNull(message = "title cannot be null!")
     @NotBlank(message = "title cannot be empty")
     @Size(min = 1, max = 40,message = "title must be between 1 and 40 characters")
     private String title;
 
-    @SanitizeHtmlAnnotation
     @NotNull(message = "description cannot be null!")
     @NotBlank(message = "description cannot be empty")
     private String description;

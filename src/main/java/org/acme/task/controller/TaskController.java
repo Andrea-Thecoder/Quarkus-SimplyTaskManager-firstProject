@@ -65,6 +65,7 @@ public class TaskController {
             @PathParam("id") long id,
             @Valid TaskUpdateDTO updateDTO
             ){
+        System.out.println("Ciao");
         return new SuccessResponse<> (this.taskService.updateTask(id,updateDTO));
     }
 

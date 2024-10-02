@@ -2,16 +2,15 @@ package org.acme.task.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import org.acme.annotation.SanitizeHtmlAnnotation;
 
 public class TaskUpdateDTO {
 
 
-    @SanitizeHtmlAnnotation
+
     @Size(min = 1,max = 40,message = "Title must be between 1 and 40 characters")
     private String title;
 
-    @SanitizeHtmlAnnotation
+
     private String description;
 
 
