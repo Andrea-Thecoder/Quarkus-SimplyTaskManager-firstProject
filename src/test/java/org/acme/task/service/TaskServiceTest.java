@@ -6,6 +6,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import org.acme.task.dto.TaskCreateDTO;
 import org.acme.task.dto.TaskUpdateDTO;
 import org.acme.task.mapper.TaskMapper;
 import org.acme.task.model.Task;
@@ -189,7 +190,7 @@ public class TaskServiceTest {
         //response è l'oggetto contenente la rispsota creata dop oaver simulato la reuqest nel test
         //controlliamo le asserzioni (assertion = modo per affermare che una certa condizione deve essere soddisfatta in un punto specifico del codice)
 
-        System.out.println("Stiamo all'input avente:" + input.getId());
+        //System.out.println("Stiamo all'input avente:" + input.getId());
 
         //assert al lserve per controlalre tutte le possibili eccezion iche vengono lanciate durantei l test
         assertAll(
@@ -252,8 +253,8 @@ public class TaskServiceTest {
                 .put("/task/update/" + id)
                 .thenReturn(); // Restituisce la risposta senza controlli
 
-        System.out.println("Stiamo testando l'input con ID: " + id);
-        System.out.println(response.getBody().asString());
+        // System.out.println("Stiamo testando l'input con ID: " + id);
+       // System.out.println(response.getBody().asString());
 
         // Assert per controllare il successo della risposta
         assertAll(
@@ -269,6 +270,46 @@ public class TaskServiceTest {
                 }
         );
     }
+
+
+    @Test
+    public void deleteTaskByIdTest() {
+        // Step 1: Creare un nuovo task da eliminare
+        String taskId = createTaskAndGetId();
+
+        // Step 2: Effettuare la richiesta DELETE all'endpoint /tasks/{id}
+        given()
+                .when()
+                .delete("/task/remove/" + taskId)  // Assicurati che il path sia corretto
+                .then()
+                .statusCode(200); // Il codice di stato 204 indica che l'operazione è andata a buon fine e non c'è contenuto da restituire
+
+        // Step 3: Verifica che la risorsa non esista più
+        given()
+                .when()
+                .get("/task/" + taskId)
+                .then()
+                .statusCode(404); // Codice di stato 404 indica che la risorsa non è stata trovata
+    }
+
+    private String createTaskAndGetId() {
+        TaskCreateDTO create = new TaskCreateDTO();
+        create.setTitle("Task di test " + System.currentTimeMillis()); // Aggiungi un timestamp al titolo
+        create.setDescription("Test DELETE");
+
+        Response response = given()
+                .contentType("application/json")
+                .body(create)
+                .when()
+                .post("/task/add-task")
+                .then()
+                .log().all() // stampa l'intea response nel debug/log, ottimo direi! XD
+                .statusCode(200)
+                .extract().response();
+
+        return response.jsonPath().getString("data.id");
+    }
+
 
 
 
