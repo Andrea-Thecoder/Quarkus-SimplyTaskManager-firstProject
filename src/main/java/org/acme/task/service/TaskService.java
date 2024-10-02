@@ -56,9 +56,8 @@ public class TaskService implements   ITaskService {
     public TaskResponseDTO findByTitle(String title){
 
             String titleCapitalized = StringUtils.capitalizeOnlyFirstLetter(title);
-            if (title == null || title.isEmpty() ) throw new IllegalArgumentException("Title cannot be empty");
-            Optional<Task> taskOpt = this.taskRepository.findByTitle(title);
-            if(!taskOpt.isPresent()) throw new NoSuchElementException("Task with Title: " + title + " not exist!");
+            Optional<Task> taskOpt = this.taskRepository.findByTitle(titleCapitalized);
+            if(!taskOpt.isPresent()) throw new NoSuchElementException("Task with Title: " + titleCapitalized + " not exist!");
             Task task = taskOpt.get();
             return this.taskMapper.toDtoResponse(task);
 
