@@ -10,6 +10,7 @@ import org.acme.task.dto.TaskUpdateDTO;
 import org.acme.task.service.TaskService;
 import org.acme.utils.response.SuccessResponse;
 import org.acme.validation.ValidId;
+import org.acme.validation.ValidTitle;
 
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class TaskController {
     @GET
     @Path("/by-title")
     public SuccessResponse<TaskResponseDTO> findByTitle(
-            @QueryParam("title") String title
+            @QueryParam("title")@ValidTitle(maxLength = 40) String title
     ){
         return new SuccessResponse<>(this.taskService.findByTitle(title));
     }

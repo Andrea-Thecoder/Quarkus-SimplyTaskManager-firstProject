@@ -17,6 +17,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -273,6 +275,7 @@ public class TaskServiceTest {
 
 
     @Test
+    @Transactional
     public void deleteTaskByIdTest() {
         // Step 1: Creare un nuovo task da eliminare
         String taskId = createTaskAndGetId();
@@ -309,6 +312,40 @@ public class TaskServiceTest {
 
         return response.jsonPath().getString("data.id");
     }
+
+    @Test
+    public void getAllTasksTest() {
+        // Step 1: Creare alcuni task per il test
+        createTaskAndGetId();
+        createTaskAndGetId();
+
+        // Step 2: Effettuare la richiesta GET all'endpoint /tasks
+        Response response = given()
+                .when()
+                .get("/task") // Assicurati che il path sia corretto
+                .then()
+                .statusCode(200) // Verifica che il codice di stato sia 200
+                .extract().response();
+
+        // Step 3: Controlla il contenuto della risposta
+        //Map è  una collezione di coppia chiave-valore, dove ogni chiave è univoca, utilissima per i JSON e non solo.
+        List<Map<String, Object>> tasks = response.jsonPath().getList("data");
+
+        // Verifica che la lista dei task non sia vuota
+        //assertfalse è opposto di assert ovvero verifica che la condizione sia FALSE se è FALSE allora va tutto bene e l'errore NON si veerifica.
+        assertFalse(tasks.isEmpty(), "empty list: no good!");
+
+
+        for (Map<String, Object> task : tasks) {
+            assertNotNull(task.get("id"), "The task ID must not be null.");
+            assertNotNull(task.get("title"), "The task title must not be null.");
+            assertNotNull(task.get("createAt"), "The task creation date must not be null.");
+            assertNotNull(task.get("updateAt"), "The task update date must not be null.");
+            assertNotNull(task.get("isComplete"), "The task completion status must not be null.");
+        }
+    }
+
+
 
 
 
