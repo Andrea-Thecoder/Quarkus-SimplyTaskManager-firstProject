@@ -10,7 +10,7 @@ public class TaskUpdateDTO {
     @Size(min = 1,max = 40,message = "Title must be between 1 and 40 characters")
     private String title;
 
-
+    @Size(min=1)
     private String description;
 
 

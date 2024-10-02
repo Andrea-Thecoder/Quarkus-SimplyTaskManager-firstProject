@@ -11,6 +11,13 @@ public class ConstraintViolationExceptionMapper implements ExceptionMapper<Const
 
     @Override
     public Response toResponse(ConstraintViolationException exception) {
+        // in questo modo gestiamo il messaggio custom, se presente allora lo mappa e lo prende, altrimenti mette uno di default.
+     /*   String errorMessage = exception.getConstraintViolations()
+                .stream()
+                .findFirst()
+                .map(violation -> violation.getMessage())
+                .orElse("Validation not work");*/
+
         ErrorResponse errorResponse = new ErrorResponse(
                 Response.Status.BAD_REQUEST.getStatusCode(),
                 "Validation not work",

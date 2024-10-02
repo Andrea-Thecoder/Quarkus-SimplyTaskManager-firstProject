@@ -36,7 +36,7 @@ public class TaskService implements   ITaskService {
 
     @Transactional //indica che il code deve essere eseguito all'intero di una transaction, ovvero  quando viene evocato il method se una transizione è gia attiva continua ad utilizzare la stessa e non ne crea una nuova. Si deve usare la transaction per qualsiasi cosa che modifichi lo status del server (put,delete,post etc). La transizione viene "commit"  ovvero salva le modifiche solo SE termina con successo ovvero non throwa exception . In caso di exception effettua un rollback  ovvero annulal tutte le modifiche fatte durante la transizione, in questo modo l'integrita strutturale del DB viene preservata.
     public TaskResponseDTO createTask (TaskCreateDTO createDTO){
-            //pulizia dei valori d'ingresso, in questo caso impsotiamo la prima elttera del titolo in upperCase. Solo la priam lettera in quanto potremmo trovare nei titoli delle sigle in maiuscolo e devono restare tali.
+            //pulizia dei valori d'ingresso, in questo caso impostiamo la prima lettera del titolo in upperCase. Solo la priam lettera in quanto potremmo trovare nei titoli delle sigle in maiuscolo e devono restare tali.
             String title = StringUtils.capitalizeOnlyFirstLetter(createDTO.getTitle());
 
             Optional<Task> TaskCheckOpt = this.taskRepository.findByTitle(title);
@@ -66,9 +66,6 @@ public class TaskService implements   ITaskService {
 
     public TaskResponseDTO findById(long id){
 
-
-            if (id <= 0) throw new IllegalArgumentException("ID non valido");
-
             Optional<Task> TaskCheckOpt = this.taskRepository.findByIdOptional(id);
             if (!TaskCheckOpt.isPresent()) throw new NoSuchElementException("Task with id: '" + id + "' not exists.");
 
@@ -80,8 +77,6 @@ public class TaskService implements   ITaskService {
 
     @Transactional
     public TaskResponseDTO updateTask(long id, TaskUpdateDTO updateDTO) {
-
-            if (id <= 0) throw new IllegalArgumentException("Invalid ID value");
 
             Optional<Task> TaskCheckOpt = this.taskRepository.findByIdOptional(id);
             if (!TaskCheckOpt.isPresent()) throw new NoSuchElementException("Task with id: '" + id + "' not exists.");
@@ -123,7 +118,7 @@ public class TaskService implements   ITaskService {
     public List<TaskResponseDTO> findByCompletion (String booleanValue){
 
             if(booleanValue == null || booleanValue.isEmpty())
-                throw new IllegalArgumentException("ID non valido");
+                throw new IllegalArgumentException("Invalid Params (complete)");
 
             //il parsing da String a boolean otterrà true solo se la stringa conterrà "true" altrimenti false
             boolean isComplete = Boolean.parseBoolean(booleanValue);

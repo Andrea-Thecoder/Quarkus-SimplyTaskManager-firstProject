@@ -10,6 +10,7 @@ import org.acme.task.dto.TaskUpdateDTO;
 import org.acme.task.mapper.TaskMapper;
 import org.acme.task.model.Task;
 import org.acme.task.repository.TaskRepository;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -117,7 +118,7 @@ public class TaskServiceTest {
                 .then()
                 .statusCode(400)
                 .body("status", is(400))
-                .body("message",is("Illegal argument"))
+                .body("message",is("Validation not work"))
                 .body("details", notNullValue());
     }
 
@@ -143,26 +144,21 @@ public class TaskServiceTest {
 
     //per rendere piu velcoe ed automatizzato il tutto possiamo creare dei method specifici che cfreano i stream di dati (flusso di dati) e poi import nel method,  come segue:
 
-    private static Stream<InvalidInput> invalidInputs() {
+    private static Stream<InputForTest> invalidInputs() {
         return Stream.of(
                 // Errore: ID non valido
-                new InvalidInput(-1, "", "Descrizione", true), // ID non valido, titolo vuoto
-                new InvalidInput(-2, null, "Descrizione", false), // ID non valido, titolo null
-                new InvalidInput(0, "Titolo", "Descrizione", true), // ID zero, titolo valido
+                new InputForTest(-1, "", "Descrizione", true), // ID non valido, titolo vuoto
+                new InputForTest(-2, null, "Descrizione", false), // ID non valido, titolo null
+                new InputForTest(0, "Titolo", "Descrizione", true), // ID zero, titolo valido
 
-                // Errore: Titolo vuoto o null
-                new InvalidInput(1, "", "Descrizione", true), // ID valido, titolo vuoto
-                new InvalidInput(2, null, "Descrizione", false), // ID valido, titolo null
+                // Errore: Titolo vuoto
+                new InputForTest(1, "", "Descrizione", true), // ID valido, titolo vuoto
 
-                // Errore: Descrizione null o vuota
-                new InvalidInput(3, "Titolo", null, true), // ID valido, titolo valido, descrizione null
-                new InvalidInput(4, "Titolo", "", false), // ID valido, titolo valido, descrizione vuota
-
-                // Errore: Booleano null
-                new InvalidInput(5, "Titolo", "Descrizione", null), // ID valido, titolo valido, descrizione valida, booleano null
+                // Errore: Descrizione vuota
+                new InputForTest(4, "Titolo", "", false), // ID valido, titolo valido, descrizione vuota
 
                 // Errore: Titolo troppo lungo
-                new InvalidInput(6, "Titolo con più di 40 caratteri per testare il limite dei caratteri", "Descrizione", true)
+                new InputForTest(5, "Titolo con più di 40 caratteri per testare il limite dei caratteri", "Descrizione", true)
         );
 
 
@@ -170,8 +166,9 @@ public class TaskServiceTest {
 
     @ParameterizedTest //indica che è u ntest con parametri in Input
     @MethodSource("invalidInputs") //indica la fonte degli input da dove proviene
+    @DisplayName("Test with input: {0}") //annotation per mostrare input corrente.
     @Transactional
-    public void updateTaskInputInvalidTest(InvalidInput input){
+    public void updateTaskInputInvalidTest(InputForTest input){
         long id = input.getId();
         String title = input.getTitle();
         String description = input.getDescription();
@@ -192,14 +189,18 @@ public class TaskServiceTest {
         //response è l'oggetto contenente la rispsota creata dop oaver simulato la reuqest nel test
         //controlliamo le asserzioni (assertion = modo per affermare che una certa condizione deve essere soddisfatta in un punto specifico del codice)
 
+        System.out.println("Stiamo all'input avente:" + input.getId());
+
         //assert al lserve per controlalre tutte le possibili eccezion iche vengono lanciate durantei l test
         assertAll(
                 () -> {
                     assertEquals(400,response.getStatusCode());
                     if(id <= 0){
-                        assertEquals("Illegal Argument", response.jsonPath().getString("message"));
+                        assertEquals("Validation not work", response.jsonPath().getString("message"),
+                                "The error message should indicate 'Illegal argument' for negative IDs.");
                     } else {
-                        assertEquals("Validation not work", response.jsonPath().getString("message"));
+                        assertEquals("Validation not work", response.jsonPath().getString("message"),
+                                "The error message should indicate 'Validation not work' for validation fail");
                     }
                 },
         () -> assertNotNull(response.jsonPath().getString("details"))
@@ -207,11 +208,77 @@ public class TaskServiceTest {
     }
 
 
+    private static Stream<InputForTest> validInputs() {
+        return Stream.of(
+                // ID valido (1), titolo e descrizione validi
+                new InputForTest(1, "Titolo valido1", "Descrizione valida1", true),
+                new InputForTest(1, "Titolo valido2", "Descrizione valida2", false),
+                new InputForTest(1, "Titolo valido3", "Descrizione valida3", null),
+
+                // ID valido (2), titolo valido, descrizione null
+                new InputForTest(2, "Titolo valido4", null, null),
+
+                // ID valido (3), titolo null, descrizione valida
+                new InputForTest(3, null, "Descrizione valida4", null),
+                new InputForTest(3, null, "Descrizione valida5", true),
+
+                // ID valido (4), titolo e descrizione null
+                new InputForTest(4, null, null, null),
+                new InputForTest(4, null, null, false)
+        );
+    }
+
+
+    @ParameterizedTest //indica che è u ntest con parametri in Input
+    @MethodSource("validInputs") //indica la fonte degli input da dove proviene
+    @DisplayName("Test with input: {0}") //annotation per mostrare input corrente.
+    @Transactional
+    public void updateTaskInputValidTest(InputForTest input) {
+        long id = input.getId();
+        String title = input.getTitle();
+        String description = input.getDescription();
+        Boolean isComplete = input.getComplete();
+
+        TaskUpdateDTO updateDTO = new TaskUpdateDTO();
+        updateDTO.setTitle(title);
+        updateDTO.setDescription(description);
+        updateDTO.setComplete(isComplete);
+
+        // Simula la richiesta PUT
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .body(updateDTO)
+                .when()
+                .put("/task/update/" + id)
+                .thenReturn(); // Restituisce la risposta senza controlli
+
+        System.out.println("Stiamo testando l'input con ID: " + id);
+        System.out.println(response.getBody().asString());
+
+        // Assert per controllare il successo della risposta
+        assertAll(
+                () -> assertEquals(200, response.getStatusCode(), "Expected HTTP status 200"),
+                () -> {
+                    // Accesso ai dati nel campo "data"
+                    assertNotNull(response.jsonPath().getString("data.id"), "ID should not be null");
+                    assertNotNull(response.jsonPath().getString("data.title"), "Title should not be null");
+                    assertNotNull(response.jsonPath().getString("data.description"), "Description should not be null");
+                    assertNotNull(response.jsonPath().getString("data.createAt"), "CreatedAt should not be null");
+                    assertNotNull(response.jsonPath().getString("data.updateAt"), "UpdatedAt should not be null");
+                    assertNotNull(response.jsonPath().getBoolean("data.isComplete"), "IsComplete should not be null");
+                }
+        );
+    }
+
+
+
+
+
 
 
 
 //classe itnerna che useremo per i test:
-static class InvalidInput {
+static class InputForTest {
     private final long id;
     private final String title;
     private final Boolean isComplete;
@@ -219,7 +286,7 @@ static class InvalidInput {
     private String extraField;
 
 
-    public InvalidInput(long id, String title, String description, Boolean isComplete) {
+    public InputForTest(long id, String title, String description, Boolean isComplete) {
         this.id = id;
         this.title = title;
         this.description = description;

@@ -9,6 +9,7 @@ import org.acme.task.dto.TaskResponseDTO;
 import org.acme.task.dto.TaskUpdateDTO;
 import org.acme.task.service.TaskService;
 import org.acme.utils.response.SuccessResponse;
+import org.acme.validation.ValidId;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class TaskController {
     @GET
     @Path("/{id}")
     public SuccessResponse<TaskResponseDTO> findById(
-            @PathParam("id") long id
+            @PathParam("id") @ValidId long id
     ){
         return new SuccessResponse<>(this.taskService.findById(id));
     }
@@ -59,20 +60,19 @@ public class TaskController {
         return new SuccessResponse<> (this.taskService.createTask(createDTO));
     }
 
-    @PUT
-    @Path("/update/{id}")
-    public  SuccessResponse<TaskResponseDTO> updateTask(
-            @PathParam("id") long id,
-            @Valid TaskUpdateDTO updateDTO
-            ){
-        System.out.println("Ciao");
-        return new SuccessResponse<> (this.taskService.updateTask(id,updateDTO));
-    }
+        @PUT
+        @Path("/update/{id}")
+        public  SuccessResponse<TaskResponseDTO> updateTask(
+                @PathParam("id") @ValidId long id,
+                @Valid TaskUpdateDTO updateDTO
+                ){
+            return new SuccessResponse<> (this.taskService.updateTask(id,updateDTO));
+        }
 
     @DELETE
     @Path("/remove/{id}")
     public SuccessResponse<TaskResponseDTO> deleteById(
-            @PathParam("id") long id
+            @PathParam("id") @ValidId long id
     ){
         return new SuccessResponse<> (this.taskService.deleteById(id));
     }
