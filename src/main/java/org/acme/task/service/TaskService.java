@@ -91,7 +91,7 @@ public class TaskService implements   ITaskService {
             if(updateDTO.isComplete() != null)
                 updateTask.setComplete(updateDTO.isComplete());
 
-            this.taskRepository.persist(updateTask);
+            taskRepository.persist(updateTask);
 
             return this.taskMapper.toDtoResponse(updateTask);
 
@@ -102,12 +102,12 @@ public class TaskService implements   ITaskService {
 
             if (id <= 0) throw new IllegalArgumentException("Invalid ID value!");
 
-            Optional<Task> TaskCheckOpt = this.taskRepository.findByIdOptional(id);
+            Optional<Task> TaskCheckOpt = taskRepository.findByIdOptional(id);
             if (!TaskCheckOpt.isPresent()) throw new EntityExistsException("Task with id: '" + id + "' not exists.");
 
             Task task = TaskCheckOpt.get();
 
-            this.taskRepository.delete(task);
+            taskRepository.delete(task);
 
             return this.taskMapper.toDtoResponse(task);
 

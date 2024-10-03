@@ -18,7 +18,7 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON) //indica che output(response) questo endpoint produrrà, in questo caso un json!
 @Consumes(MediaType.APPLICATION_JSON) //indica che Input(request) questo controller accettà in questo caso json.
 
-public class TaskController {
+public class TaskResource {
 
     @Inject
     TaskService taskService;
