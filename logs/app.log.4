@@ -1,0 +1,46 @@
+2024-10-11 18:29:00,897 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45524] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.token-prefix" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-11 18:29:00,897 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45524] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.enabled" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-11 18:29:00,897 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45524] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.roles.enabled" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-11 18:29:00,897 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45524] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.auth.basic" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-11 18:29:00,897 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45524] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.token-header" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-11 18:29:01,240 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45524] ERROR [io.qua.run.boo.StartupActionImpl] (Quarkus Main Thread) Error running Quarkus: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.quarkus.runner.bootstrap.StartupActionImpl$1.run(StartupActionImpl.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ExceptionInInitializerError
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:300)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newConstructorAccessor(MethodHandleAccessorFactory.java:103)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newConstructorAccessor(ReflectionFactory.java:200)
+	at java.base/java.lang.reflect.Constructor.acquireConstructorAccessor(Constructor.java:549)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:70)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:44)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:124)
+	at io.quarkus.runner.GeneratedMain.main(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 3 more
+Caused by: java.lang.RuntimeException: Failed to start quarkus
+	at io.quarkus.runner.ApplicationImpl.<clinit>(Unknown Source)
+	... 16 more
+Caused by: org.hibernate.AnnotationException: Association 'org.acme.model.Account.profile' is 'mappedBy' a property named 'account' which does not exist in the target entity type 'org.acme.model.Profile'
+	at org.hibernate.boot.model.internal.OneToOneSecondPass.targetProperty(OneToOneSecondPass.java:239)
+	at org.hibernate.boot.model.internal.OneToOneSecondPass.bindUnowned(OneToOneSecondPass.java:148)
+	at org.hibernate.boot.model.internal.OneToOneSecondPass.doSecondPass(OneToOneSecondPass.java:128)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1842)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1800)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootMetadataBuilder.build(FastBootMetadataBuilder.java:410)
+	at io.quarkus.hibernate.orm.runtime.PersistenceUnitsHolder.createMetadata(PersistenceUnitsHolder.java:101)
+	at io.quarkus.hibernate.orm.runtime.PersistenceUnitsHolder.constructMetadataAdvance(PersistenceUnitsHolder.java:73)
+	at io.quarkus.hibernate.orm.runtime.PersistenceUnitsHolder.initializeJpa(PersistenceUnitsHolder.java:40)
+	at io.quarkus.hibernate.orm.runtime.HibernateOrmRecorder$1.created(HibernateOrmRecorder.java:78)
+	at io.quarkus.arc.runtime.ArcRecorder.initBeanContainer(ArcRecorder.java:80)
+	at io.quarkus.deployment.steps.ArcProcessor$notifyBeanContainerListeners1304312071.deploy_0(Unknown Source)
+	at io.quarkus.deployment.steps.ArcProcessor$notifyBeanContainerListeners1304312071.deploy(Unknown Source)
+	... 17 more
+
+2024-10-11 18:29:01,262 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45524] INFO  [io.qua.dep.dev.IsolatedDevModeMain] (main) Attempting to start live reload endpoint to recover from previous Quarkus startup failure

@@ -1,0 +1,28 @@
+services:  #definizione dei servizi
+  db-postgreSQL:  # Nome del servizio
+    image: postgres:latest  # Immagine Docker per PostgreSQL
+    restart: always  # Riavvia il container in caso di errore. in produzione/collaudo on-failure
+    environment:  # Variabili d'ambiente per configurare PostgreSQL
+      POSTGRES_USER: myuser  # Nome utente per PostgreSQL
+      POSTGRES_PASSWORD: mypassword  # Password per l'utente
+      POSTGRES_DB: mydb  # Nome del database da creare
+    ports:
+      - "5432:5432"  # Mappa la porta 5432 del container sulla porta 5432 dell'host
+    volumes: #spazio di archiviazione gestito da docker per la persistenza dei dati anche quando il network viene messo down. i volumi possono essere condivisi tra più container
+      - ./data:/var/lib/postgresql/data #bind mount, in questo modo i dati vengono persistiti nella cartella del progetto dove si trova dockercompose.
+    #- postgres_data:/var/lib/postgresql/data  # Monta un volume per persistere i dati completamente gestito da docker, easy to backup e sono portabili
+    networks:
+      - main_network
+    healthcheck: #controllo di salute del container
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER"] #stringa di comandi, il primo value è in che modo verranno lanciati i comandi (cdm-shell = come da terminale), dopo di che insierisci i params che vuoi far partire.
+      interval: 30s #tempo tra un check e l'altro, a ridurre di questo tempo più consuma risorse
+      timeout: 10s #tempo che docker aspetta prima diconsiderare il check fallito!
+      retries: 5 #quanti tentativi falliti docker attende prima di segnalare il contaienr come non in salute (unheatly)
+
+
+# volumes: #fuori dal services indicihiamo un volumes dove impostiamo i nom idei volumi che abbiamo, esso serve per creare la condivisione tra i vari container.
+#  postgres_data:  # Nome del volume per PostgreSQL vale solo per i named volume
+
+networks:
+  main_network:
+    driver: bridge

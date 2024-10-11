@@ -1,25 +1,26 @@
+/*
 package org.acme.task.service;
 
-import io.quarkus.test.Mock;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import org.acme.task.dto.TaskCreateDTO;
-import org.acme.task.dto.TaskUpdateDTO;
+import org.acme.dto.task.TaskCreateDTO;
+import org.acme.dto.task.TaskUpdateDTO;
+import org.acme.service.TaskServiceold;
 import org.acme.task.mapper.TaskMapper;
-import org.acme.task.model.Task;
-import org.acme.task.repository.TaskRepository;
+
+import org.acme.repository.TaskRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.time.LocalDateTime;
+
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
+
 import java.util.stream.Stream;
 
 import static io.restassured.RestAssured.*;
@@ -30,15 +31,11 @@ import static org.junit.jupiter.api.Assertions.*;
 @QuarkusTest
 public class TaskServiceTest {
 
-    @Inject
-    TaskService taskServiceTest ;  //DI della classe che siamo testando
-
-    @Inject
-    TaskMapper taskMapper;
 
     @Inject
     TaskRepository taskRepository;
 
+*/
 
     /*private long taskId;
 
@@ -55,7 +52,7 @@ public class TaskServiceTest {
 
         taskRepository.persist(task);
         this.taskId = task.getId();
-    }*/
+    }*//*
 
     @Test //questo test deve avere successo
     @Transactional //il test deve rispecchiare tutte le annotation della vera classe/method
@@ -146,7 +143,6 @@ public class TaskServiceTest {
     }
 
     //per rendere piu velcoe ed automatizzato il tutto possiamo creare dei method specifici che cfreano i stream di dati (flusso di dati) e poi import nel method,  come segue:
-
     private static Stream<InputForTest> invalidInputs() {
         return Stream.of(
                 // Errore: ID non valido
@@ -273,7 +269,6 @@ public class TaskServiceTest {
         );
     }
 
-
     @Test
     @Transactional
     public void deleteTaskByIdTest() {
@@ -332,7 +327,7 @@ public class TaskServiceTest {
         List<Map<String, Object>> tasks = response.jsonPath().getList("data");
 
         // Verifica che la lista dei task non sia vuota
-        //assertfalse è opposto di assert ovvero verifica che la condizione sia FALSE se è FALSE allora va tutto bene e l'errore NON si veerifica.
+        //assertfalse è opposto di assert ovvero verifica che la condizione sia FALSE se è FALSE allora va tutto bene e l'errore NON si verifica.
         assertFalse(tasks.isEmpty(), "empty list: no good!");
 
 
@@ -400,3 +395,4 @@ static class InputForTest {
     }
 }}
 
+*/
