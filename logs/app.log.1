@@ -1,6 +1,321 @@
-2024-10-11 18:32:41,505 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[46187] INFO  [io.quarkus] (Quarkus Main Thread) code-with-quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.15.1) started in 0.533s. Listening on: http://localhost:8080
-2024-10-11 18:32:41,508 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[46187] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
-2024-10-11 18:32:41,509 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[46187] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-mysql, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, vertx]
-2024-10-11 18:32:41,510 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[46187] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload total time: 1.052s 
-2024-10-11 18:34:35,589 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[46187] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-3) Restarting quarkus due to changes in Profile.class.
-2024-10-11 18:34:35,592 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[46187] INFO  [io.quarkus] (Quarkus Main Thread) code-with-quarkus stopped in 0.002s
+2024-10-15 16:11:57,717 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.token-prefix" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:11:57,717 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.enabled" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:11:57,717 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.roles.enabled" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:11:57,718 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.auth.basic" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:11:57,718 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.token-header" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:11:58,867 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Quarkus Main Thread) code-with-quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.15.1) started in 2.473s. Listening on: http://localhost:8080
+2024-10-15 16:11:58,868 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2024-10-15 16:11:58,868 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-mysql, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, vertx]
+2024-10-15 16:17:02,000 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [io.qua.config] (Test runner thread) Unrecognized configuration key "quarkus.security.jwt.token-prefix" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:17:02,004 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [io.qua.config] (Test runner thread) Unrecognized configuration key "quarkus.security.jwt.enabled" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:17:02,005 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [io.qua.config] (Test runner thread) Unrecognized configuration key "quarkus.security.roles.enabled" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:17:02,006 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [io.qua.config] (Test runner thread) Unrecognized configuration key "quarkus.security.auth.basic" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:17:02,007 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [io.qua.config] (Test runner thread) Unrecognized configuration key "quarkus.security.jwt.token-header" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:17:02,968 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) code-with-quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.15.1) started in 1.959s. Listening on: http://localhost:8081
+2024-10-15 16:17:02,970 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) Profile test activated. 
+2024-10-15 16:17:02,971 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-mysql, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, vertx]
+2024-10-15 16:17:09,409 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) SQL Error: 0, SQLState: 23505
+2024-10-15 16:17:09,410 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) ERROR: duplicate key value violates unique constraint "tasks_title_account_id_key"
+  Detail: Key (title, account_id)=(Ciaoooo, 11) already exists.
+2024-10-15 16:17:09,413 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [com.arj.ats.arjuna] (executor-thread-1) ARJUNA012125: TwoPhaseCoordinator.beforeCompletion - failed for SynchronizationImple< 0:ffff7f000101:adbd:670e795f:6f, org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization@6611740c >: org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "tasks_title_account_id_key"
+  Detail: Key (title, account_id)=(Ciaoooo, 11) already exists.] [update tasks set account_id=?,description=?,is_complete=?,title=?,update_at=? where id=?]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.doStaticUpdate(UpdateCoordinatorStandard.java:781)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.performUpdate(UpdateCoordinatorStandard.java:328)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.update(UpdateCoordinatorStandard.java:245)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:169)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl.beforeCompletion(JtaTransactionCoordinatorImpl.java:336)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorNonTrackingImpl.beforeCompletion(SynchronizationCallbackCoordinatorNonTrackingImpl.java:47)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:37)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(SynchronizationImple.java:52)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordinator.java:348)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:66)
+	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:135)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1290)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:104)
+	at io.quarkus.narayana.jta.runtime.NotifyingTransactionManager.commit(NotifyingTransactionManager.java:70)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:406)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:171)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at org.acme.service.TaskService_Subclass.updateTask(Unknown Source)
+	at org.acme.service.TaskService_ClientProxy.updateTask(Unknown Source)
+	at org.acme.api.TaskResource.updateTask(TaskResource.java:74)
+	at org.acme.api.TaskResource_Subclass.updateTask$$superforward(Unknown Source)
+	at org.acme.api.TaskResource_Subclass$$function$$7.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext$NextAroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:97)
+	at io.quarkus.hibernate.validator.runtime.interceptor.AbstractMethodValidationInterceptor.validateMethodInvocation(AbstractMethodValidationInterceptor.java:71)
+	at io.quarkus.hibernate.validator.runtime.jaxrs.ResteasyReactiveEndPointValidationInterceptor.validateMethodInvocation(ResteasyReactiveEndPointValidationInterceptor.java:21)
+	at io.quarkus.hibernate.validator.runtime.jaxrs.ResteasyReactiveEndPointValidationInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:70)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext$NextAroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:97)
+	at io.quarkus.security.runtime.interceptor.SecurityHandler.handle(SecurityHandler.java:27)
+	at io.quarkus.security.runtime.interceptor.AuthenticatedInterceptor.intercept(AuthenticatedInterceptor.java:29)
+	at io.quarkus.security.runtime.interceptor.AuthenticatedInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:70)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.resteasy.reactive.server.runtime.StandardSecurityCheckInterceptor.intercept(StandardSecurityCheckInterceptor.java:44)
+	at io.quarkus.resteasy.reactive.server.runtime.StandardSecurityCheckInterceptor_AuthenticatedInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at org.acme.api.TaskResource_Subclass.updateTask(Unknown Source)
+	at org.acme.api.TaskResource$quarkusrestinvoker$updateTask_7b471d27a577fd5b5d94488650b3c3b292f5144c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:635)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2516)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2495)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1521)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "tasks_title_account_id_key"
+  Detail: Key (title, account_id)=(Ciaoooo, 11) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:90)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	... 74 more
+
+2024-10-15 16:17:10,525 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) code-with-quarkus(test application) stopped in 0.013s
+2024-10-15 17:59:54,836 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) code-with-quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.15.1) started in 0.815s. Listening on: http://localhost:8081
+2024-10-15 17:59:54,839 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) Profile test activated. 
+2024-10-15 17:59:54,840 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-mysql, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, vertx]
+2024-10-15 17:59:57,527 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) SQL Error: 0, SQLState: 23505
+2024-10-15 17:59:57,528 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) ERROR: duplicate key value violates unique constraint "tasks_title_account_id_key"
+  Detail: Key (title, account_id)=(Ciaoooo, 11) already exists.
+2024-10-15 17:59:57,530 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [com.arj.ats.arjuna] (executor-thread-1) ARJUNA012125: TwoPhaseCoordinator.beforeCompletion - failed for SynchronizationImple< 0:ffff7f000101:adbd:670e795f:eb, org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization@6425851a >: org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "tasks_title_account_id_key"
+  Detail: Key (title, account_id)=(Ciaoooo, 11) already exists.] [update tasks set account_id=?,description=?,is_complete=?,title=?,update_at=? where id=?]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.doStaticUpdate(UpdateCoordinatorStandard.java:781)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.performUpdate(UpdateCoordinatorStandard.java:328)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.update(UpdateCoordinatorStandard.java:245)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:169)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl.beforeCompletion(JtaTransactionCoordinatorImpl.java:336)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorNonTrackingImpl.beforeCompletion(SynchronizationCallbackCoordinatorNonTrackingImpl.java:47)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:37)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(SynchronizationImple.java:52)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordinator.java:348)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:66)
+	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:135)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1290)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:104)
+	at io.quarkus.narayana.jta.runtime.NotifyingTransactionManager.commit(NotifyingTransactionManager.java:70)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:406)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:171)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at org.acme.service.TaskService_Subclass.updateTask(Unknown Source)
+	at org.acme.service.TaskService_ClientProxy.updateTask(Unknown Source)
+	at org.acme.api.TaskResource.updateTask(TaskResource.java:74)
+	at org.acme.api.TaskResource_Subclass.updateTask$$superforward(Unknown Source)
+	at org.acme.api.TaskResource_Subclass$$function$$16.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext$NextAroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:97)
+	at io.quarkus.hibernate.validator.runtime.interceptor.AbstractMethodValidationInterceptor.validateMethodInvocation(AbstractMethodValidationInterceptor.java:71)
+	at io.quarkus.hibernate.validator.runtime.jaxrs.ResteasyReactiveEndPointValidationInterceptor.validateMethodInvocation(ResteasyReactiveEndPointValidationInterceptor.java:21)
+	at io.quarkus.hibernate.validator.runtime.jaxrs.ResteasyReactiveEndPointValidationInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:70)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext$NextAroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:97)
+	at io.quarkus.security.runtime.interceptor.SecurityHandler.handle(SecurityHandler.java:27)
+	at io.quarkus.security.runtime.interceptor.AuthenticatedInterceptor.intercept(AuthenticatedInterceptor.java:29)
+	at io.quarkus.security.runtime.interceptor.AuthenticatedInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:70)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.resteasy.reactive.server.runtime.StandardSecurityCheckInterceptor.intercept(StandardSecurityCheckInterceptor.java:44)
+	at io.quarkus.resteasy.reactive.server.runtime.StandardSecurityCheckInterceptor_AuthenticatedInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at org.acme.api.TaskResource_Subclass.updateTask(Unknown Source)
+	at org.acme.api.TaskResource$quarkusrestinvoker$updateTask_7b471d27a577fd5b5d94488650b3c3b292f5144c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:635)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2516)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2495)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1521)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "tasks_title_account_id_key"
+  Detail: Key (title, account_id)=(Ciaoooo, 11) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:90)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	... 74 more
+
+2024-10-15 17:59:58,605 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) code-with-quarkus(test application) stopped in 0.003s
+2024-10-15 17:59:59,312 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) code-with-quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.15.1) started in 0.689s. Listening on: http://localhost:8081
+2024-10-15 17:59:59,313 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) Profile test activated. 
+2024-10-15 17:59:59,314 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-mysql, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, vertx]
+2024-10-15 18:00:00,615 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) code-with-quarkus(test application) stopped in 0.003s
+2024-10-15 18:00:22,860 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) code-with-quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.15.1) started in 0.787s. Listening on: http://localhost:8081
+2024-10-15 18:00:22,862 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) Profile test activated. 
+2024-10-15 18:00:22,864 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-mysql, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, vertx]
+2024-10-15 18:00:24,150 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) code-with-quarkus(test application) stopped in 0.004s
+2024-10-15 18:00:24,737 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) code-with-quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.15.1) started in 0.561s. Listening on: http://localhost:8081
+2024-10-15 18:00:24,738 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) Profile test activated. 
+2024-10-15 18:00:24,739 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-mysql, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, vertx]
+2024-10-15 18:00:29,992 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) SQL Error: 0, SQLState: 23505
+2024-10-15 18:00:29,994 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) ERROR: duplicate key value violates unique constraint "tasks_title_account_id_key"
+  Detail: Key (title, account_id)=(Ciaoooo, 11) already exists.
+2024-10-15 18:00:29,995 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] WARN  [com.arj.ats.arjuna] (executor-thread-1) ARJUNA012125: TwoPhaseCoordinator.beforeCompletion - failed for SynchronizationImple< 0:ffff7f000101:adbd:670e795f:1ee, org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization@4d839c7b >: org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "tasks_title_account_id_key"
+  Detail: Key (title, account_id)=(Ciaoooo, 11) already exists.] [update tasks set account_id=?,description=?,is_complete=?,title=?,update_at=? where id=?]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.doStaticUpdate(UpdateCoordinatorStandard.java:781)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.performUpdate(UpdateCoordinatorStandard.java:328)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.update(UpdateCoordinatorStandard.java:245)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:169)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl.beforeCompletion(JtaTransactionCoordinatorImpl.java:336)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorNonTrackingImpl.beforeCompletion(SynchronizationCallbackCoordinatorNonTrackingImpl.java:47)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:37)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(SynchronizationImple.java:52)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordinator.java:348)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:66)
+	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:135)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1290)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:104)
+	at io.quarkus.narayana.jta.runtime.NotifyingTransactionManager.commit(NotifyingTransactionManager.java:70)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:406)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:171)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at org.acme.service.TaskService_Subclass.updateTask(Unknown Source)
+	at org.acme.service.TaskService_ClientProxy.updateTask(Unknown Source)
+	at org.acme.api.TaskResource.updateTask(TaskResource.java:74)
+	at org.acme.api.TaskResource_Subclass.updateTask$$superforward(Unknown Source)
+	at org.acme.api.TaskResource_Subclass$$function$$43.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext$NextAroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:97)
+	at io.quarkus.hibernate.validator.runtime.interceptor.AbstractMethodValidationInterceptor.validateMethodInvocation(AbstractMethodValidationInterceptor.java:71)
+	at io.quarkus.hibernate.validator.runtime.jaxrs.ResteasyReactiveEndPointValidationInterceptor.validateMethodInvocation(ResteasyReactiveEndPointValidationInterceptor.java:21)
+	at io.quarkus.hibernate.validator.runtime.jaxrs.ResteasyReactiveEndPointValidationInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:70)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext$NextAroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:97)
+	at io.quarkus.security.runtime.interceptor.SecurityHandler.handle(SecurityHandler.java:27)
+	at io.quarkus.security.runtime.interceptor.AuthenticatedInterceptor.intercept(AuthenticatedInterceptor.java:29)
+	at io.quarkus.security.runtime.interceptor.AuthenticatedInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:70)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.resteasy.reactive.server.runtime.StandardSecurityCheckInterceptor.intercept(StandardSecurityCheckInterceptor.java:44)
+	at io.quarkus.resteasy.reactive.server.runtime.StandardSecurityCheckInterceptor_AuthenticatedInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at org.acme.api.TaskResource_Subclass.updateTask(Unknown Source)
+	at org.acme.api.TaskResource$quarkusrestinvoker$updateTask_7b471d27a577fd5b5d94488650b3c3b292f5144c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:635)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2516)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2495)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1521)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "tasks_title_account_id_key"
+  Detail: Key (title, account_id)=(Ciaoooo, 11) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:90)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	... 74 more
+
+2024-10-15 18:00:31,121 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[11094] INFO  [io.quarkus] (Test runner thread) code-with-quarkus(test application) stopped in 0.004s

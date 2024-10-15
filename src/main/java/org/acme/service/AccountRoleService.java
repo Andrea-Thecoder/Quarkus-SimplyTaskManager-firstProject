@@ -12,10 +12,10 @@ import org.acme.dto.BaseSearchRequest;
 import org.acme.dto.PageResult;
 import org.acme.dto.role.AccountRoleDTO;
 import org.acme.dto.role.AccountRoleResponseDTO;
+import org.acme.exception.RoleDeleteException;
 import org.acme.model.AccountRole;
 import org.acme.repository.AccountRoleRepository;
 import org.acme.service.impl.IAccountRoleService;
-import org.acme.utils.exception.RoleDeleteException;
 import org.apache.commons.lang3.StringUtils;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 

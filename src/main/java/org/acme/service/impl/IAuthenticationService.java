@@ -1,6 +1,6 @@
 package org.acme.service.impl;
 
-import org.acme.dto.AuthenticationLoginDTO;
+import org.acme.dto.auth.AuthenticationLoginDTO;
 
 public interface IAuthenticationService {
 

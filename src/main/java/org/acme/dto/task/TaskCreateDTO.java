@@ -3,14 +3,16 @@ package org.acme.dto.task;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.acme.model.Task;
 import org.acme.utils.StringUtils;
 
 
 //DTO per la creazione di nuovi Task, da usare nel method POST del Task.
-@Getter @Setter
+@Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class TaskCreateDTO {
 
     @NotBlank(message = "title cannot be empty")

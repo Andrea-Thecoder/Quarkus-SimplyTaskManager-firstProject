@@ -3,6 +3,7 @@ package org.acme.service;
 
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.panache.common.Page;
+import io.quarkus.security.UnauthorizedException;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityExistsException;
@@ -14,7 +15,6 @@ import org.acme.dto.account.*;
 import org.acme.model.Account;
 import org.acme.repository.AccountRepository;
 import org.acme.security.PasswordUtils;
-import org.acme.utils.exception.InvalidPasswordException;
 import org.apache.commons.lang3.StringUtils;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 
@@ -92,12 +92,12 @@ public class AccountService {
     public AccountResponseDTO updateAccountPassword(AccountPasswordUpdateDTO updateDTO){
 
         if(!updateDTO.getPassword().equals(updateDTO.getRepeatPassword()))
-            throw new InvalidPasswordException("Password and repeatPassword do not match ");
+            throw new UnauthorizedException("Email or password not match");
 
         long userId = Long.parseLong(jwt.getSubject());
         Account account = getAccountOrThrow(userId);
         if(!PasswordUtils.checkPassword(updateDTO.getPassword(),account.getPassword()))
-            throw new InvalidPasswordException("Password do not match ");
+            throw new UnauthorizedException("Email or password not match");
 
         account.setPassword(PasswordUtils.hashPassword(updateDTO.getNewPassword()));
 

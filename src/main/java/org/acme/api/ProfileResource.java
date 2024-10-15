@@ -8,8 +8,8 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.acme.dto.profile.ProfileResponseDTO;
 import org.acme.dto.profile.ProfileUpdateDTO;
+import org.acme.dto.response.SuccessResponse;
 import org.acme.service.ProfileService;
-import org.acme.utils.response.SuccessResponse;
 
 @Path("/profiles")
 @Produces(MediaType.APPLICATION_JSON)
@@ -31,10 +31,5 @@ public class ProfileResource {
             ){
         return new SuccessResponse<>(profileService.updateProfile(updateDTO));
     }
-
-
-
-
-
 
 }

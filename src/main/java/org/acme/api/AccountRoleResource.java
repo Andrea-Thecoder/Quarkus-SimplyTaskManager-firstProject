@@ -8,10 +8,10 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.acme.dto.BaseSearchRequest;
 import org.acme.dto.PageResult;
+import org.acme.dto.response.SuccessResponse;
 import org.acme.dto.role.AccountRoleDTO;
 import org.acme.dto.role.AccountRoleResponseDTO;
 import org.acme.service.AccountRoleService;
-import org.acme.utils.response.SuccessResponse;
 import org.acme.validation.ValidId;
 
 

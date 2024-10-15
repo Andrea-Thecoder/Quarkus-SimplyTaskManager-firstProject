@@ -7,12 +7,12 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.acme.dto.BaseSearchRequest;
 import org.acme.dto.PageResult;
+import org.acme.dto.response.SuccessResponse;
 import org.acme.dto.task.TaskAdminResponseDTO;
 import org.acme.dto.task.TaskCreateDTO;
 import org.acme.dto.task.TaskResponseDTO;
 import org.acme.dto.task.TaskUpdateDTO;
 import org.acme.service.TaskService;
-import org.acme.utils.response.SuccessResponse;
 import org.acme.validation.ValidId;
 
 @Path("/tasks") //endpoint del controller!

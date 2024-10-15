@@ -1,46 +1,89 @@
-2024-10-11 18:30:18,012 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45868] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.token-prefix" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
-2024-10-11 18:30:18,012 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45868] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.enabled" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
-2024-10-11 18:30:18,012 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45868] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.roles.enabled" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
-2024-10-11 18:30:18,012 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45868] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.auth.basic" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
-2024-10-11 18:30:18,012 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45868] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.token-header" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
-2024-10-11 18:30:18,338 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45868] ERROR [io.qua.run.boo.StartupActionImpl] (Quarkus Main Thread) Error running Quarkus: java.lang.reflect.InvocationTargetException
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at io.quarkus.runner.bootstrap.StartupActionImpl$1.run(StartupActionImpl.java:116)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.lang.ExceptionInInitializerError
-	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
-	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
-	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:300)
-	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newConstructorAccessor(MethodHandleAccessorFactory.java:103)
-	at java.base/jdk.internal.reflect.ReflectionFactory.newConstructorAccessor(ReflectionFactory.java:200)
-	at java.base/java.lang.reflect.Constructor.acquireConstructorAccessor(Constructor.java:549)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at io.quarkus.runtime.Quarkus.run(Quarkus.java:70)
-	at io.quarkus.runtime.Quarkus.run(Quarkus.java:44)
-	at io.quarkus.runtime.Quarkus.run(Quarkus.java:124)
-	at io.quarkus.runner.GeneratedMain.main(Unknown Source)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	... 3 more
-Caused by: java.lang.RuntimeException: Failed to start quarkus
-	at io.quarkus.runner.ApplicationImpl.<clinit>(Unknown Source)
-	... 16 more
-Caused by: org.hibernate.AnnotationException: Association 'org.acme.model.Account.profile' is 'mappedBy' a property named 'account' which does not exist in the target entity type 'org.acme.model.Profile'
-	at org.hibernate.boot.model.internal.OneToOneSecondPass.targetProperty(OneToOneSecondPass.java:239)
-	at org.hibernate.boot.model.internal.OneToOneSecondPass.bindUnowned(OneToOneSecondPass.java:148)
-	at org.hibernate.boot.model.internal.OneToOneSecondPass.doSecondPass(OneToOneSecondPass.java:128)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1842)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1800)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334)
-	at io.quarkus.hibernate.orm.runtime.boot.FastBootMetadataBuilder.build(FastBootMetadataBuilder.java:410)
-	at io.quarkus.hibernate.orm.runtime.PersistenceUnitsHolder.createMetadata(PersistenceUnitsHolder.java:101)
-	at io.quarkus.hibernate.orm.runtime.PersistenceUnitsHolder.constructMetadataAdvance(PersistenceUnitsHolder.java:73)
-	at io.quarkus.hibernate.orm.runtime.PersistenceUnitsHolder.initializeJpa(PersistenceUnitsHolder.java:40)
-	at io.quarkus.hibernate.orm.runtime.HibernateOrmRecorder$1.created(HibernateOrmRecorder.java:78)
-	at io.quarkus.arc.runtime.ArcRecorder.initBeanContainer(ArcRecorder.java:80)
-	at io.quarkus.deployment.steps.ArcProcessor$notifyBeanContainerListeners1304312071.deploy_0(Unknown Source)
-	at io.quarkus.deployment.steps.ArcProcessor$notifyBeanContainerListeners1304312071.deploy(Unknown Source)
-	... 17 more
+2024-10-15 16:06:51,795 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.token-prefix" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:06:51,795 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.enabled" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:06:51,795 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.roles.enabled" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:06:51,795 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.auth.basic" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:06:51,795 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.security.jwt.token-header" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2024-10-15 16:06:52,896 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] INFO  [io.quarkus] (Quarkus Main Thread) code-with-quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.15.1) started in 2.404s. Listening on: http://localhost:8080
+2024-10-15 16:06:52,897 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2024-10-15 16:06:52,898 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-mysql, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, vertx]
+2024-10-15 16:07:45,851 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] WARN  [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) SQL Error: 0, SQLState: 57P01
+2024-10-15 16:07:45,852 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) FATAL: terminating connection due to administrator command
+2024-10-15 16:07:45,852 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] WARN  [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) SQL Error: 0, SQLState: 08006
+2024-10-15 16:07:45,853 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (executor-thread-1) An I/O error occurred while sending to the backend.
+2024-10-15 16:07:45,856 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] WARN  [com.arj.ats.jta] (executor-thread-1) ARJUNA016045: attempted rollback of < formatId=131077, gtrid_length=35, bqual_length=36, tx_uid=0:ffff7f000101:85c7:670e7731:0, node_name=quarkus, branch_uid=0:ffff7f000101:85c7:670e7731:3, subordinatenodename=null, eis_name=0 > (io.agroal.narayana.LocalXAResource@34a3fe1d) failed with exception code XAException.XAER_RMERR
 
-2024-10-11 18:30:18,363 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[45868] INFO  [io.qua.dep.dev.IsolatedDevModeMain] (main) Attempting to start live reload endpoint to recover from previous Quarkus startup failure
+Exception in AccountResource.java:65
+	   63              @Valid AccountCreateDTO createDTO
+	   64              ){
+	-> 65          return new SuccessResponse<>(accountService.createAccount(createDTO));
+	   66      }
+	   67  
+
+
+
+Exception in AccountResource.java:65
+	   63              @Valid AccountCreateDTO createDTO
+	   64              ){
+	-> 65          return new SuccessResponse<>(accountService.createAccount(createDTO));
+	   66      }
+	   67  
+
+: javax.transaction.xa.XAException: Error trying to transactionRollback local transaction: This connection has been closed.
+	at io.agroal.narayana.XAExceptionUtils.xaException(XAExceptionUtils.java:20)
+	at io.agroal.narayana.XAExceptionUtils.xaException(XAExceptionUtils.java:8)
+	at io.agroal.narayana.LocalXAResource.rollback(LocalXAResource.java:89)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.XAResourceRecord.topLevelAbort(XAResourceRecord.java:338)
+	at com.arjuna.ats.arjuna.coordinator.BasicAction.doAbort(BasicAction.java:3132)
+	at com.arjuna.ats.arjuna.coordinator.BasicAction.doAbort(BasicAction.java:3111)
+	at com.arjuna.ats.arjuna.coordinator.BasicAction.Abort(BasicAction.java:1705)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.cancel(TwoPhaseCoordinator.java:99)
+	at com.arjuna.ats.arjuna.AtomicAction.abort(AtomicAction.java:159)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.rollbackAndDisassociate(TransactionImple.java:1372)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.rollback(BaseTransaction.java:121)
+	at io.quarkus.narayana.jta.runtime.NotifyingTransactionManager.rollback(NotifyingTransactionManager.java:94)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:404)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:175)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at org.acme.service.AccountService_Subclass.createAccount(Unknown Source)
+	at org.acme.service.AccountService_ClientProxy.createAccount(Unknown Source)
+	at org.acme.api.AccountResource.createAccount(AccountResource.java:65)
+	at org.acme.api.AccountResource_Subclass.createAccount$$superforward(Unknown Source)
+	at org.acme.api.AccountResource_Subclass$$function$$4.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.hibernate.validator.runtime.interceptor.AbstractMethodValidationInterceptor.validateMethodInvocation(AbstractMethodValidationInterceptor.java:71)
+	at io.quarkus.hibernate.validator.runtime.jaxrs.ResteasyReactiveEndPointValidationInterceptor.validateMethodInvocation(ResteasyReactiveEndPointValidationInterceptor.java:21)
+	at io.quarkus.hibernate.validator.runtime.jaxrs.ResteasyReactiveEndPointValidationInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at org.acme.api.AccountResource_Subclass.createAccount(Unknown Source)
+	at org.acme.api.AccountResource$quarkusrestinvoker$createAccount_1f6ad310fbf6d28b000b2ab259a3a523f0b962c9.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:635)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2516)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2495)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1521)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.postgresql.util.PSQLException: This connection has been closed.
+	at org.postgresql.jdbc.PgConnection.checkClosed(PgConnection.java:1009)
+	at org.postgresql.jdbc.PgConnection.rollback(PgConnection.java:1016)
+	at io.agroal.pool.ConnectionHandler.transactionRollback(ConnectionHandler.java:359)
+	at io.agroal.narayana.LocalXAResource.rollback(LocalXAResource.java:86)
+	... 45 more
+
+2024-10-15 16:07:45,860 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] WARN  [io.agr.pool] (executor-thread-1) Datasource '<default>': This connection has been closed.
+2024-10-15 16:07:45,861 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] WARN  [io.agr.pool] (executor-thread-1) Datasource '<default>': This connection has been closed.
+2024-10-15 16:10:46,163 andrea-thecoder /home/andrea-thecoder/.sdkman/candidates/java/21.0.4-tem/bin/java[9173] INFO  [io.quarkus] (Shutdown thread) code-with-quarkus stopped in 0.010s
