@@ -1,7 +1,6 @@
 # Welcome at my First Quarkus Project!
 
 This repository show my first Quarkus project a simply Task Manager backend. 
-Before i start to upgrate this project adding account, auth etc... i want run optimization of code and add some utils.
 
 Please remember to go in application.proprieties and changing the url of you MySQL DB, add password and change username if needed, then change (for the first run only!) the database generation in create. 
 
